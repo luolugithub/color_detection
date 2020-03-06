@@ -14,12 +14,11 @@ from matplotlib import pyplot as plt
 cmap = plt.cm.gray
 cmap.set_bad((1, 0, 0, 1))
 
-img = cv.imread('image/tedt.jpg', 0)
-edges = cv.Canny(img, 480, 384)
+img = cv.imread('result/mask_blue.png', 0)
+edges = cv.Canny(img, 1001, 1001, edges=200, apertureSize=7)
 plt.axis('off')
-# plt.imshow(img, cmap='gray')
-# plt.title('Original Image'), plt.xticks([]), plt.yticks([])
-plt.imshow(edges,  cmap='Blues')
-# plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
-plt.savefig("result/edge_blue.png")
-plt.show()
+
+
+# plt.imshow(edges,  cmap='Blues')
+cv.imwrite("result/canny_edge_blue.png", edges)
+
