@@ -14,12 +14,17 @@ import numpy as np
 def nothing(*arg):
     pass
 
-
+# light blue R: 3 G: 250 B: 253
+# light fen RGB (192,192,255)
 # Initial HSV GUI slider values to load on program start.
 # icol = (36, 202, 59, 71, 255, 255)  # Green
 # icol = (18, 0, 196, 36, 255, 255)  # Yellow
-icol = (89, 0, 0, 125, 255, 255)  # Blue
+# icol = (89, 0, 0, 125, 255, 255)  # Blue
 # icol = (0, 100, 80, 10, 255, 255)   # Red
+# icol = (1, 10, 99, 10, 150, 255)   # fen R: 254 G: 195 B: 180
+# icol = (160, 80, 45, 190, 150, 255)   # shenzi R: 126 G: 126 B: 255
+# icol = (0, 136, 126, 176, 255, 200)   # caolv R: 0 G: 136 B: 126
+icol = (192, 192, 200, 255, 255, 255)   # light_fen
 cv2.namedWindow('colorTest')
 # Lower range colour sliders.
 cv2.createTrackbar('lowHue', 'colorTest', icol[0], 255, nothing)

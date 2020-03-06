@@ -8,7 +8,7 @@
 
 from PIL import Image
 
-img = Image.open('result/canny_edge_blue.png')
+img = Image.open('result/maskLightFen.png')
 img = img.convert("RGBA")
 datas = img.getdata()
 
@@ -17,7 +17,7 @@ for item in datas:
     if item[0] == 0 and item[1] == 0 and item[2] == 0:
         newData.append((0, 0, 0, 0))
     else:
-        if item[0] > 150:
+        if item[0] < 150:
             newData.append((0, 0, 0, 255))
         else:
             newData.append(item)
@@ -25,4 +25,4 @@ for item in datas:
 
 
 img.putdata(newData)
-img.save("open_science_logo_transparent.png", "PNG")
+img.save("result/maskLightFen_transparent.png", "PNG")
