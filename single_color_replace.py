@@ -9,16 +9,23 @@
 from PIL import Image
 import numpy as np
 
-im = Image.open('result/mask_light_fen.png')
+im = Image.open('result/mask_1Illite.png')
 im = im.convert('RGBA')
 
 data = np.array(im)  # "data" is a height x width x 4 numpy array
+print(data.shape)
 red, green, blue, alpha = data.T  # Temporarily unpack the bands for readability
 
 # Replace white with red... (leaves alpha values alone...)
 white_areas = (red == 255) & (blue == 255) & (green == 255)
-data[..., :-1][white_areas.T] = (192, 192, 255)  # Transpose back needed
+data[..., :-1][white_areas.T] = (0, 192, 0)  # Transpose back needed
 
+# Replace other with black...
+# white_areas = (red == 255) & (blue == 255) & (green == 255)
+# if white_areas != (red == 255) & (blue == 192) & (green == 192):
+#     data[..., :-1][white_areas.T] = (255, 255, 255)
+#
+#
 im2 = Image.fromarray(data)
-im2.save("result/maskLightFen.png")
+im2.save("result/mask1Illite.png")
 im2.show()

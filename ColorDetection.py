@@ -14,18 +14,32 @@ import numpy as np
 def nothing(*arg):
     pass
 
-# light blue R: 3 G: 250 B: 253
-# light fen RGB (192,192,255)
+
 # Initial HSV GUI slider values to load on program start.
 # icol = (36, 202, 59, 71, 255, 255)  # Green
 # icol = (18, 0, 196, 36, 255, 255)  # Yellow
-# icol = (89, 0, 0, 125, 255, 255)  # Blue
 # icol = (0, 100, 80, 10, 255, 255)   # Red
-# icol = (1, 10, 99, 10, 150, 255)   # fen R: 254 G: 195 B: 180
+# icol = (0, 100, 80, 10, 255, 255)   # Red
+# icol = (89, 0, 0, 125, 255, 255)  # light Blue 0, 255, 255
+# icol = (1, 10, 99, 10, 150, 255)   # fen R: 254 G: 195 B: 180 | 255, 192, 192
+icol = (0, 136, 126, 176, 255, 200)   # caolv R: 0 G: 136 B: 126 | 0, 128, 128
 # icol = (160, 80, 45, 190, 150, 255)   # shenzi R: 126 G: 126 B: 255
-# icol = (0, 136, 126, 176, 255, 200)   # caolv R: 0 G: 136 B: 126
-icol = (192, 192, 200, 255, 255, 255)   # light_fen
-cv2.namedWindow('colorTest')
+# icol = (150, 150, 200, 255, 255, 255)   # light_fen
+# icol = (1, 10, 99, 10, 150, 255)  # Quartz 石英	255, 192, 192
+# icol = (0, 255, 255, 50, 255, 255)  # Albite 钠长石	0, 255, 255
+# icol = (0, 128, 128, 50, 200, 200)  # K-Feldspar 钾长石	0, 128, 128
+# icol = (192, 192, 255, 220, 220, 255)  # Calcite 方解石	192, 192, 255
+# icol = (128, 128, 255, 180, 180, 255)  # Dolomite 白云石	128, 128, 255
+# icol = (192, 64, 0, 235, 128, 50)  # Kaolinite 高岭石	192, 64, 0
+# icol = (0, 192, 0, 50, 235, 50)  # Illite 伊利石	0, 192, 0
+# icol = (0, 255, 0, 50, 255, 50)  # Chlorite 绿泥石	0, 255, 0
+# icol = (0, 64, 0, 50, 120, 50)  # Muscovite 云母	0, 64, 0
+# icol = (51, 102, 0, 100, 160, 50)  # Smectite 蒙脱石	51, 102, 0
+# icol = (255, 255, 0, 255, 255, 100)  # Pyrite 黄铁矿	255, 255, 0
+# icol = (224, 224, 224, 255, 255, 255)  # Pores 孔隙	224, 224, 224
+# icol = (0, 0, 0, 50, 50, 50)  # Unclassified 无法识别的	0, 0, 0
+
+cv2.namedWindow('colorTest', flags=2)
 # Lower range colour sliders.
 cv2.createTrackbar('lowHue', 'colorTest', icol[0], 255, nothing)
 cv2.createTrackbar('lowSat', 'colorTest', icol[1], 255, nothing)
@@ -38,7 +52,7 @@ cv2.createTrackbar('highVal', 'colorTest', icol[5], 255, nothing)
 # Raspberry pi file path example.
 # frame = cv2.imread('/home/pi/python3/opencv/color-test/colour-circles-test.jpg')
 # Windows file path example.
-frame = cv2.imread('/home/luolu/PycharmProjects/BONC Cloudiip/yashi.png')
+frame = cv2.imread('/home/luolu/PycharmProjects/color_detection/data/qaak/65.BMP')
 
 while True:
     # Get HSV values from the GUI sliders.
@@ -91,6 +105,3 @@ while True:
         break
 
 cv2.destroyAllWindows()
-
-
-

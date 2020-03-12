@@ -8,7 +8,7 @@
 
 from PIL import Image
 
-img = Image.open('result/maskLightFen.png')
+img = Image.open('result/mask1Quartz.png')
 img = img.convert("RGBA")
 datas = img.getdata()
 
@@ -25,4 +25,4 @@ for item in datas:
 
 
 img.putdata(newData)
-img.save("result/maskLightFen_transparent.png", "PNG")
+img.save("result/mask1Quartz_transparent.png", "PNG")
