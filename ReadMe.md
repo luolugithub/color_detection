@@ -6,6 +6,13 @@
   <img src='data/result_qaak/edge_caol/2_mask_caolv.png' width='400'/>
 </p>
 
+- Paste multiple image results
+<p align='left'>  
+  <img src='data/result_qaak/transparent/2_mask_caolv.png' width='400'/>
+  <img src='data/result_qaak/transparent/2_mask_fen.png' width='400'/>
+  <img src='data/result_qaak/transparent/2_mask_lightblue.png' width='400'/>
+  <img src='data/result_qaak/result/2.png' width='400'/>
+</p>
 
 
 
