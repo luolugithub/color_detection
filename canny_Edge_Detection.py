@@ -12,17 +12,10 @@ import cv2 as cv
 from PIL import Image
 from matplotlib import pyplot as plt
 
-cmap = plt.cm.gray
-cmap.set_bad((1, 0, 0, 1))
 
 img = cv.imread('image/cttest.tiff', 0)
 edges = cv.Canny(img, 1960, 2008, edges=200, apertureSize=7)
-plt.axis('off')
-
-
-# plt.imshow(edges,  cmap='Blues')
-cv.imwrite("result/edge_shenzi.png", edges)
-edges = Image.open('result/edge_shenzi.png')
+edges = Image.fromarray(edges)
 edges = edges.convert('RGBA')
 data = np.array(edges)   # "data" is a height x width x 4 numpy array
 red, green, blue, alpha = data.T # Temporarily unpack the bands for readability
