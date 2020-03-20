@@ -1,3 +1,29 @@
+# About Particle extraction、Get Mask、Edge Detection、Image Transpatren、Image Composite and Image Composite
+
+- Edge Detection results
+<p align='left'>  
+  <img src='data/result_qaak/caol/2_mask_caolv.png' width='400'/>
+  <img src='data/result_qaak/edge_caol/2_mask_caolv.png' width='400'/>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # transparen 
 convert mask_w_blue.png -fuzz 10% -transparent white a_transparent.png
 
