@@ -6,6 +6,12 @@
   <img src='data/result_qaak/edge_caol/2_mask_caolv.png' width='400'/>
 </p>
 
+- Fill pore results
+<p align='left'>  
+  <img src='data/result_qaak/fen/47_mask_fen.png' width='400'/>
+  <img src='data/result_qaak/pore_filled_fen/47_mask_fen.png' width='400'/>
+</p>
+
 - Paste multiple image results
 <p align='left'>  
   <img src='data/result_qaak/transparent/2_mask_caolv.png' width='400'/>
