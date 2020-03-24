@@ -15,27 +15,13 @@ import numpy as np
 from PIL import Image
 import numpy as np
 
-# img = Image.open('result/mask1Quartz.png')
-# img = img.convert("RGBA")
-# datas = img.getdata()
-#
-# newData = []
-# for item in datas:
-#     if item[0] == 0 and item[1] == 0 and item[2] == 0:
-#         newData.append((0, 0, 0, 0))
-#     else:
-#         if item[0] < 150:
-#             newData.append((0, 0, 0, 255))
-#         else:
-#             newData.append(item)
-#             print(item)
-#
-#
-# img.putdata(newData)
-# img.save("result/mask1Quartz_transparent.png", "PNG")
+# caolv     > 150
+# lb        > 150
+# fen       < 150
+
 
 if __name__ == '__main__':
-    for filename in glob.glob('/home/luolu/PycharmProjects/color_detection/data/result_qaak/lightblue_mask/*.png'):
+    for filename in glob.glob('/home/luolu/PycharmProjects/color_detection/data/result_qaak/caolv_mask/*.png'):
         img = cv.imread(filename)
         # print(filename)
         base_name = os.path.basename(filename)
@@ -56,4 +42,4 @@ if __name__ == '__main__':
                     print(item)
 
         img.putdata(newData)
-        img.save("/home/luolu/PycharmProjects/color_detection/data/result_qaak/transparent_lightblue/" + base_name)
+        img.save("/home/luolu/PycharmProjects/color_detection/data/result_qaak/transparent/" + base_name)

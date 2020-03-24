@@ -22,10 +22,11 @@ if __name__ == '__main__':
     foreground2 = []
     foreground3 = []
     base_name = ''
-    for filename in glob.glob('/home/luolu/PycharmProjects/color_detection/data/result_qaak/transparent/9_*.png'):
+    counter = 0
+    for filename in sorted(glob.glob('/home/luolu/PycharmProjects/color_detection/data/result_qaak/transparent/*.png')):
         img = cv.imread(filename)
         height, width, channels = img.shape
-        print(height, width, channels)
+        # print(height, width, channels)
 
         # globals(background)
         # globals(foreground1)
@@ -36,19 +37,36 @@ if __name__ == '__main__':
         # print(filename)
         base_name = os.path.basename(filename)
         # print(base_name)
-        print(base_name.split('_')[0])
+        # print(base_name.split('_')[0])
 
         if filename.__contains__('caolv'):
+            print(base_name)
             foreground1 = Image.open(filename).convert('RGBA')
+            # background.paste(foreground1, (0, 0), foreground1)
+            counter = counter + 1
         if filename.__contains__('fen'):
+            print(base_name)
             foreground2 = Image.open(filename).convert('RGBA')
-        if filename.__contains__('light'):
+            # background.paste(foreground2, (0, 0), foreground2)
+            counter = counter + 1
+        if filename.__contains__('lightblue'):
+            print(base_name)
             foreground3 = Image.open(filename).convert('RGBA')
+            # background.paste(foreground3, (0, 0), foreground3)
+            counter = counter + 1
 
 
-    background.paste(foreground1, (0, 0), foreground1)
-    background.paste(foreground2, (0, 0), foreground2)
-    # background.paste(foreground3, (0, 0), foreground3)
+        # background.paste(foreground1, (0, 0), foreground1)
+        # background.paste(foreground2, (0, 0), foreground2)
+        # background.paste(foreground3, (0, 0), foreground3)
 
-    background.save("/home/luolu/PycharmProjects/color_detection/data/result_qaak/result/"
-                        + base_name.split('_')[0] + ".png")
+        # background.save("/home/luolu/PycharmProjects/color_detection/data/result_qaak/result/"
+        #                     + base_name.split('_')[0] + ".png")
+        print('counter:', counter)
+        if counter == 3:
+            background.paste(foreground1, (0, 0), foreground1)
+            background.paste(foreground2, (0, 0), foreground2)
+            background.paste(foreground3, (0, 0), foreground3)
+            background.save("/home/luolu/PycharmProjects/color_detection/data/result_qaak/result/"
+                            + base_name.split('_')[0] + ".png")
+            counter = 0
